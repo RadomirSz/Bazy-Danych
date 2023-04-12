@@ -1,0 +1,37 @@
+/* Zadanie 1 */
+
+SELECT przepisy.NazwaPrzepisu, skladniki.NazwaSkladnika, skladniki_przepisow.Ilosc ,miary.OpisMiary
+FROM `skladniki`, `skladniki_przepisow`, `przepisy`, `miary`
+WHERE skladniki.IDSkladnika=skladniki_przepisow.IDSkladnika AND
+skladniki.IDMiaryIlosci=skladniki_przepisow.IDMiaryIlosci AND
+skladniki_przepisow.IDMiaryIlosci = miary.IDMiaryIlosci AND
+skladniki_przepisow.IDPrzepisu = przepisy.IDPrzepisu
+ORDER BY przepisy.NazwaPrzepisu
+
+/* Zadanie 2 */
+
+SELECT agenci.ImieAgenta,agenci.NazwiskoAgenta,SUM(imprezy.WartoscKontraktu) AS `LacznaWartoscKontraktu`
+FROM `agenci`,`imprezy`
+WHERE agenci.IDAgenta = imprezy.IDAgenta AND
+imprezy.DzienRozpoczecia LIKE "2017-12%" OR imprezy.DzienZakonczenia LIKE "2017-12%"
+GROUP BY agenci.IDAgenta 
+ORDER BY `LacznaWartoscKontraktu` DESC
+
+
+/* Zadanie 3 */ 
+
+SELECT lokalizacje.powiat, SUM(obserwacje.liczebnosc) AS `LacznaLiczebnosc`
+FROM `lokalizacje` , `obserwacje`
+WHERE lokalizacje.ID_lokalizacji = obserwacje.ID_lokalizacji
+GROUP BY lokalizacje.powiat
+ORDER BY `LacznaLiczebnosc` DESC
+Limit = 10
+/* Zadanie 4 */
+
+SELECT gatunki.nazwa_zwyczajowa, COUNT(obserwacje.zachowanie) AS `iloscSytuacji`
+FROM `gatunki`,`obserwacje`
+WHERE gatunki.ID_gatunku = obserwacje.ID_gatunku AND 
+obserwacje.zachowanie = "plywa" AND gatunki.nazwa_zwyczajowa LIKE "M%"
+GROUP BY gatunki.nazwa_zwyczajowa
+ORDER BY `iloscSytuacji` DESC
+Limit = 3

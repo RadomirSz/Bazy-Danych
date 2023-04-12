@@ -1,0 +1,6 @@
+widok
+obiekt zapytania w bazie danych
+create view nazwa as
+inner joiny
+uniony
+outer join

@@ -1,0 +1,24 @@
+zad 1
+
+select  skladniki.NazwaSkladnika, skladniki.IDMiaryIlosci,
+count(skladniki_przepisow.Ilosc) as ilosc_skladnikow
+from skladniki, skladniki_przepisow
+WHERE skladniki_przepisow.IDMiaryIlosci=skladniki.IDMiaryIlosci;
+
+zad 2
+
+SELECT agenci.ImieAgenta, agenci.NazwiskoAgenta, imprezy.WartoscKontraktu
+FROM agenci, imprezy
+where imprezy.DzienZakonczenia like "2017-12%";
+
+zad3
+
+
+
+zad4
+SELECT gatunki.nazwa_zwyczajowa, obserwacje.zachowanie 
+from gatunki,obserwacje 
+WHERE obserwacje.ID_gatunku=gatunki.ID_gatunku
+and obserwacje.zachowanie="PLYWA"
+and gatunki.nazwa_zwyczajowa="M$" 
+ORDER BY gatunki.nazwa_zwyczajowa DESC;

@@ -1,0 +1,4 @@
+CREATE view BardzoWażnyWidokNaKlientaIImprezy as
+SELECT wykonawcy.NazwaScenicznaWykonawcy, imprezy.DzienRozpoczecia
+as start from wykonawcy INNER JOIN imprezy on 
+wykonawcy.IDWykonawcy = imprezy.IDWykonawcy ORDER BY wykonawcy.NazwaScenicznaWykonawcy;

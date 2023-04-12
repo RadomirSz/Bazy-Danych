@@ -1,0 +1,13 @@
+CREATE TABLE TABELKA(
+idTab INT PRIMARY KEY AUTO_INCREMENT,
+pesel int (11) ,
+ulicaADR varchar (45) ,
+kodPoczt varchar (10) ,
+miasto varchar (45) ,
+data_meld datetime,
+data_zamieszkania DATETIME,
+nrDomu int ,
+wysmieszkania float ,
+liczbamieszkancow int ,
+czynsz float 
+);

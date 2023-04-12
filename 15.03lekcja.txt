@@ -1,0 +1,29 @@
+DELIMITER //
+create procedure proc01 ()
+SELECT * from budynki //
+DELIMITER;
+
+DELIMITER //
+CREATE PROCEDURE proc02(IN i INT)
+BEGIN
+select i+2;
+SELECT i-4;
+END;//
+DELIMITER;
+
+DELIMITER //
+CREATE PROCEDURE proc125(IN filtr varchar(4))
+LANGUAGE SQL
+BEGIN
+SELECT nazwa_zwyczajowa from gatunki where nazwa_zwyczajowa LIKE filtr;
+END;//
+DELIMITER;
+
+DELIMITER //
+CREATE PROCEDURE procQK (IN par1 varchar(3), IN par2 varchar(4))
+LANGUAGE SQL
+BEGIN
+SELECT nazwa_zwyczajowa FROM gatunki WHERE (nazwa_zwyczajowa LIKE par1) OR 
+(nazwa_zwyczajowa LIKE par2);
+END;//
+DELIMITER;

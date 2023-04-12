@@ -1,0 +1,21 @@
+select abs(liczba)
+select radians(5.12)
+select log(5.12)
+select log10(5.12)
+select mod(11,3)
+select pi() #3.141593
+select pow(6,5)#potęga
+select
+select round(10*RAND())
+select sqrt
+select truncate(tan(16),3)
+select format(4.24356239325,3)
+select instr("ALA MA KOTA","KOT")
+select left("ALA MA KOTA",3)# ALA
+select lenght("ALA MA KOTA")#ile ma liter
+select rtrim("jakis napis                 ")#usuwa spacje z prawej strony
+select lower/upper("jakiś naaaaaaaapis")#małe/duże litery
+select concat("vbiejfhbre","erhrtghrteh") połączenie napisów
+date_sub (2019-03-07,interval 10 day) odejmuje 10 dni od daty
+
+date_sub (2019-03-07,interval -10 day) dodaje 10 dni od daty

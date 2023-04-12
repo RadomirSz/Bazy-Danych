@@ -1,0 +1,26 @@
+transakcja jest sekwencją logicznie powiązanych operacji na bazie danych
+
+
+START TRANSACTION;
+set @suma = 0;
+SELECT @suma := SUM(obserwacje.liczebnosc) 
+from gatunki inner join obserwacje on gatunki.ID_gatunku=obserwacje.ID_gatunku 
+WHERE obserwacje.ID_gatunku = 135;
+UPDATE gatunki SET gatunki.liczba = @suma WHERE gatunki.ID_gatunku=135;
+COMMIT;
+SELECT liczba,nazwa_zwyczajowa from gatunki where liczba>0
+
+
+
+
+
+
+
+
+START TRANSACTION;
+
+INSERT INTO produkty SET produkty.CenaDetaliczna = 155
+INSERT INTO produkty SET produkty.NazwaProduktu = Sprzęgło
+INSERT INTO produkty SET produkty.NumerProduktu = 2201
+INSERT INTO produkty SET produkty.
+COMMIT;

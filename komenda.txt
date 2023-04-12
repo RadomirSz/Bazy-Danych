@@ -1,0 +1,13 @@
+SELECT przepisy.NazwaPrzepisu AS WYNIK, "Przepisy" AS BAZA
+FROM przepisyprzyklad.przepisy
+UNION
+SELECT CONCAT(agenci.ImieAgenta," ",agenci.NazwiskoAgenta) AS WYNIK, "agencjaartystycznaprzyklad" AS BAZA
+FROM agencjaartystycznaprzyklad.agenci
+UNION
+SELECT CONCAT(klienci.ImieKlienta," ",klienci.NazwiskoKlienta) AS WYNIK, "zamowieniaprzyklad" AS BAZA
+FROM zamowieniaprzyklad.klienci
+UNION
+SELECT CONCAT(pracownicy.ImiePracownika," ",pracownicy.NazwiskoPracownika) AS WYNIK, "grafikuczelniprzyklad" AS BAZA
+FROM grafikuczelniprzyklad.pracownicy 
+WHERE pracownicy.Stanowisko = "W%"
+ORDER BY WYNIK

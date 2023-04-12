@@ -1,0 +1,22 @@
+znajdź pedały zamówione 13-go września 2017
+
+SELECT produkty.NazwaProduktu, dane_zamowien.ZamowionaIlosc, zamowienia.DataZamowienia 
+from produkty
+INNER JOIN dane_zamowien on 
+produkty.NumerProduktu=dane_zamowien.NumerProduktu
+inner join zamowienia on
+dane_zamowien.NumerZamowienia=zamowienia.NumerZamowienia
+WHERE produkty.NazwaProduktu LIKE "%pedały%"
+AND DAY(zamowienia.DataZamowienia) = 13 and MONTH(zamowienia.DataZamowienia) = 9 and YEAR(zamowienia.DataZamowienia) = 2017
+order by NazwaProduktu DESC;
+
+
+kolejne zadanie 
+imie nazwisko nazwascenicznawykonawcy oraz data 10<x<20
+SELECT klienci.ImieKlienta, klienci.NazwiskoKlienta, wykonawcy.NazwaScenicznaWykonawcy, imprezy.DzienRozpoczecia
+from wykonawcy
+INNER JOIN imprezy on 
+wykonawcy.IDWykonawcy=imprezy.IDWykonawcy
+INNER JOIN klienci ON
+klienci.IDKlienta=imprezy.IDKlienta
+WHERE DAY(imprezy.DzienRozpoczecia) BETWEEN 10 and 20 and MONTH(imprezy.DzienRozpoczecia) = 9 and YEAR(imprezy.DzienRozpoczecia) = 2017;

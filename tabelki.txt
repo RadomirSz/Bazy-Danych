@@ -1,0 +1,26 @@
+TABELKI TYMCZASOWE
+
+
+drop table if exists tabelka;
+#usunięto jeśli istnieje tabelka
+CREATE TEMPORARY TABLE tabelka SELECT * from klienci;
+# wypełniono tabelę tymczasową danymi z tabeli klienci
+UPDATE tabelka SET ImieKlienta = "Janek" where IDKlienta < 1008;
+UPDATE tabelka SET ImieKlienta = "Zenek" Where IDKlienta < 1005;
+UPDATE tabelka SET ImieKlienta = "gchhgui" WHERE IDKlienta > 1010;
+#teraz pokażemy wszystko z tabelki
+SELECT * from tabelka;
+SELECT * from klienci;
+drop table if exists tabelka; #usuwa wszystko z czego korzystałem "sprzątanie"
+
+
+
+
+
+
+drop TABLE if exists gerber;
+CREATE TEMPORARY TABLE gerber SELECT * from kategorie;
+UPDATE gerber set opisKategorii = "gacie" WHERE opisKategorii = "odzież";
+SELECT * from gerber;
+SELECT * from kategorie;
+drop TABLE if exists gerber;
